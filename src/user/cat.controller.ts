@@ -1,14 +1,14 @@
 
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CatsService } from './cat.service';
-import { Cat } from 'src/cat.interface';
+import { UserDto } from 'src/dto/cat.dto';
 
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
   @Post("createcat")
-  async create( @Body() cat: Cat ) {
+  async create( @Body() cat: UserDto ) {
    return await this.catsService.create(cat)
   }
   @Get("getcats")
