@@ -1,19 +1,19 @@
 
 import { Injectable } from '@nestjs/common';
-import { Cat } from 'src/cat.interface';
+import { UserDto } from 'src/dto/cat.dto';
 
 
 @Injectable()
 export class CatsService {
-  private cats: Cat[] = [];
+  private cats: UserDto[] = [];
 
-  create(newcat: Cat) {
+  create(newcat: UserDto) {
    this.cats.push(newcat);
    return newcat
    
   }
 
-  findAll(): Cat[] {
+  findAll(): UserDto[] {
     return this.cats;
   }
 
